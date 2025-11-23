@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Ideas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            background: #007bff;
+            color: white;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+
+        .resultado {
+            margin-top: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            min-height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Generador de Ideas</h1>
+    <p>Pulsa el botón para obtener una nueva idea aleatoria.</p>
+
+    <button onclick="generarIdea()">Generar</button>
+
+    <div class="resultado" id="resultado"></div>
+</div>
+
+<script>
+    const ideas = [
+        "Crear una app de recordatorios inteligentes",
+        "Diseñar una herramienta de productividad personal",
+        "Montar un pequeño curso digital",
+        "Crear una newsletter temática",
+        "Diseñar un logo para un proyecto",
+        "Escribir un artículo sobre tecnología",
+        "Lanzar un micro-servicio web útil",
+        "Hacer una app de notas minimalista",
+        "Crear contenido para redes sociales",
+        "Desarrollar una mini herramienta con JavaScript"
+    ];
+
+    function generarIdea() {
+        const randomIndex = Math.floor(Math.random() * ideas.length);
+        document.getElementById("resultado").textContent = ideas[randomIndex];
+    }
+</script>
+
+</body>
+</html>
